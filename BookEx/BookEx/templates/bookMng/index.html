@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+Welcome
+{% endblock title %}
+
+{% block sidenav %}
+  {% for item in item_list %}
+      <li xmlns="http://www.w3.org/1999/html">
+           <a href="{{ item.link }}"> {{ item.item }} </a>
+       </li>
+  {% endfor %}
+{% endblock sidenav %}
+
+{% block content %}
+<h1 align="center"> Welcome to BookEx System </h1>
+
+<div class="d-flex justify-content-center">
+     <img src="{% static 'csula-banner.png' %}" class="img-fluid" alt="Responsive image" alt="Huge csula logo">
+</div>
+{% endblock content %}
+
+{## come back to add login button if user is not logged in#}
+{#{% if user.is_authenticated %}#}
+{#    <div class="d-flex justify-content-center">#}
+{#        <button type="button" class="btn btn-primary btn-lg btn-block"><a href="">  LOG IN   :) </a></button>#}
+{#    </div>#}
+{##}
+{#{% else %}#}
+{##}
+{##}
+{#{% endif %}#}
